@@ -7,7 +7,7 @@ $MSBuildPath = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 $MSBuildXml = @"
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <Target Name="Trigger">
-        <Exec Command='powershell.exe -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri `"http://example.com`" -UseBasicParsing"' />
+        <Exec Command='powershell.exe -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri `"http://example.com`" -UseBasicParsing" | Select-Object -ExpandProperty StatusCode' />
     </Target>
 </Project>
 "@
